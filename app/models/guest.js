@@ -3,7 +3,8 @@ exports.definition = {
 		columns: {
 		    "name": "TEXT",
 		    "email": "TEXT",
-		    "phone": "TEXT"
+		    "phone": "TEXT",
+		    "checked": "INT"
 		},
 		adapter: {
 			type: "sql",

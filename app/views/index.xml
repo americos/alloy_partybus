@@ -2,14 +2,14 @@
 	<TabGroup>
 		<Tab title="Pending" icon="KS_nav_ui.png">
 			<Window title="Pending Guests">
-				<TableView id="guests_table" dataCollection="guest" dataFilter="filterTable">
+				<TableView id="pending_table" dataCollection="guest" dataFilter="filterTable">
 					<Require src="row"/>
 				</TableView>
 			</Window>
 		</Tab>
 		<Tab title="Checked-in" icon="KS_nav_views.png">
 			<Window title="Checkin Guests">
-				<TableView id="guests_table" dataCollection="guest" dataFilter="filterTable">
+				<TableView id="checkedin_table" dataCollection="guest" dataFilter="filterTable">
 					<Require src="row"/>
 				</TableView>
 			</Window>

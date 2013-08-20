@@ -14,7 +14,7 @@ function Controller() {
                 recurse: true
             }));
         }
-        $.__views.guests_table.setData(rows);
+        $.__views.pending_table.setData(rows);
     }
     function __alloyId14() {
         __alloyId14.opts || {};
@@ -31,7 +31,7 @@ function Controller() {
                 recurse: true
             }));
         }
-        $.__views.guests_table.setData(rows);
+        $.__views.checkedin_table.setData(rows);
     }
     function filterTable(collection) {
         return collection.models;
@@ -51,10 +51,10 @@ function Controller() {
         title: "Pending Guests",
         id: "__alloyId2"
     });
-    $.__views.guests_table = Ti.UI.createTableView({
-        id: "guests_table"
+    $.__views.pending_table = Ti.UI.createTableView({
+        id: "pending_table"
     });
-    $.__views.__alloyId2.add($.__views.guests_table);
+    $.__views.__alloyId2.add($.__views.pending_table);
     var __alloyId6 = Alloy.Collections["guest"] || guest;
     __alloyId6.on("fetch destroy change add remove reset", __alloyId7);
     $.__views.__alloyId1 = Ti.UI.createTab({
@@ -69,10 +69,10 @@ function Controller() {
         title: "Checkin Guests",
         id: "__alloyId9"
     });
-    $.__views.guests_table = Ti.UI.createTableView({
-        id: "guests_table"
+    $.__views.checkedin_table = Ti.UI.createTableView({
+        id: "checkedin_table"
     });
-    $.__views.__alloyId9.add($.__views.guests_table);
+    $.__views.__alloyId9.add($.__views.checkedin_table);
     var __alloyId13 = Alloy.Collections["guest"] || guest;
     __alloyId13.on("fetch destroy change add remove reset", __alloyId14);
     $.__views.__alloyId8 = Ti.UI.createTab({
@@ -92,13 +92,20 @@ function Controller() {
     var sample_guests = [ {
         name: "Americo Savinon",
         email: "americos@gmail.com",
-        phone: "2022861415"
+        phone: "2022861415",
+        checked: 1
+    }, {
+        name: "Patri Medina",
+        email: "patri@gmail.com",
+        phone: "3334445555",
+        checked: 100
     } ];
     _.each(sample_guests, function(guest) {
         guests.create({
             name: guest.name,
             email: guest.email,
-            phone: guest.phone
+            phone: guest.phone,
+            checked: guest.checked
         });
     });
     guests.fetch();
