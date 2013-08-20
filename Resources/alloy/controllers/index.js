@@ -11,7 +11,7 @@ function Controller() {
     });
     $.__views.__alloyId2 = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        title: "Tab 1",
+        title: "Pending Guests",
         id: "__alloyId2"
     });
     $.__views.__alloyId3 = Ti.UI.createLabel({
@@ -23,20 +23,20 @@ function Controller() {
             fontFamily: "Helvetica Neue"
         },
         textAlign: "center",
-        text: "I am Window 1",
+        text: "Here will be the table view with guests names",
         id: "__alloyId3"
     });
     $.__views.__alloyId2.add($.__views.__alloyId3);
     $.__views.__alloyId1 = Ti.UI.createTab({
         window: $.__views.__alloyId2,
-        title: "Tab 1",
+        title: "Pending",
         icon: "KS_nav_ui.png",
         id: "__alloyId1"
     });
     $.__views.index.addTab($.__views.__alloyId1);
     $.__views.__alloyId5 = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        title: "Tab 2",
+        title: "Checkin Guests",
         id: "__alloyId5"
     });
     $.__views.__alloyId6 = Ti.UI.createLabel({
@@ -48,13 +48,13 @@ function Controller() {
             fontFamily: "Helvetica Neue"
         },
         textAlign: "center",
-        text: "I am Window 2",
+        text: "Table view with checked in Guests",
         id: "__alloyId6"
     });
     $.__views.__alloyId5.add($.__views.__alloyId6);
     $.__views.__alloyId4 = Ti.UI.createTab({
         window: $.__views.__alloyId5,
-        title: "Tab 2",
+        title: "Checked-in",
         icon: "KS_nav_views.png",
         id: "__alloyId4"
     });
