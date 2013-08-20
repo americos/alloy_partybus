@@ -2,12 +2,16 @@
 	<TabGroup>
 		<Tab title="Pending" icon="KS_nav_ui.png">
 			<Window title="Pending Guests">
-				<Label>Here will be the table view with guests names</Label>
+				<TableView id="guests_table" dataCollection="guest" dataFilter="filterTable">
+					<Require src="row"/>
+				</TableView>
 			</Window>
 		</Tab>
 		<Tab title="Checked-in" icon="KS_nav_views.png">
 			<Window title="Checkin Guests">
-				<Label>Table view with checked in Guests</Label>
+				<TableView id="guests_table" dataCollection="guest" dataFilter="filterTable">
+					<Require src="row"/>
+				</TableView>
 			</Window>
 		</Tab>
 	</TabGroup>
