@@ -1,1 +1,1 @@
-module.exports = [];
+module.exports = [{"isId":true,"priority":100000.0005,"key":"row","style":{height:"40dp",}},{"isId":true,"priority":100000.0006,"key":"remove","style":{image:"/remove_icon.png",right:0,width:"40dp",height:"40dp",}}];

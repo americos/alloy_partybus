@@ -90,7 +90,7 @@ function Controller() {
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
     var sample_guests = [ {
-        name: "Americo",
+        name: "Americo Savinon",
         email: "americos@gmail.com",
         phone: "2022861415"
     } ];
