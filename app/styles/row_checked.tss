@@ -1,0 +1,6 @@
+"#remove": {
+	image: "/remove_icon.png",
+	right: 0,
+	width: '40dp',
+	height: '40dp'
+} 

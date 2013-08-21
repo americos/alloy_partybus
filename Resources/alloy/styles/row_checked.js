@@ -1,0 +1,1 @@
+module.exports = [{"isId":true,"priority":100000.0005,"key":"remove","style":{image:"/remove_icon.png",right:0,width:"40dp",height:"40dp",}}];

@@ -2,12 +2,6 @@
 	height: '40dp'
 }
 
-"#remove": {
-	image: "/remove_icon.png",
-	right: 0,
-	width: '40dp',
-	height: '40dp'
-} 
 
 "#add":{
 	image: "/add_icon.png",

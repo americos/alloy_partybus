@@ -1,0 +1,1 @@
+module.exports = [{"isId":true,"priority":100000.0007,"key":"row","style":{height:"40dp",}},{"isId":true,"priority":100000.0008,"key":"add","style":{image:"/add_icon.png",left:0,width:"40dp",height:"40dp",}}];

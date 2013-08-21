@@ -7,7 +7,7 @@ function Controller() {
         for (var i = 0; len > i; i++) {
             var __alloyId4 = models[i];
             __alloyId4.__transform = {};
-            var __alloyId5 = Alloy.createController("row", {
+            var __alloyId5 = Alloy.createController("row_pending", {
                 $model: __alloyId4
             });
             rows.push(__alloyId5.getViewEx({
@@ -24,7 +24,7 @@ function Controller() {
         for (var i = 0; len > i; i++) {
             var __alloyId11 = models[i];
             __alloyId11.__transform = {};
-            var __alloyId12 = Alloy.createController("row", {
+            var __alloyId12 = Alloy.createController("row_checked", {
                 $model: __alloyId11
             });
             rows.push(__alloyId12.getViewEx({
