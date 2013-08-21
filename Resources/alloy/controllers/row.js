@@ -23,11 +23,6 @@ function Controller() {
         text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
     });
     $.__views.row.add($.__views.guest_name);
-    $.__views.checked = Ti.UI.createLabel({
-        id: "checked",
-        text: "undefined" != typeof $model.__transform["checked"] ? $model.__transform["checked"] : $model.get("checked")
-    });
-    $.__views.row.add($.__views.checked);
     $.__views.remove = Ti.UI.createImageView({
         image: "/remove_icon.png",
         right: 0,

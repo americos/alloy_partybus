@@ -1,7 +1,7 @@
 function Controller() {
     function __alloyId7() {
         __alloyId7.opts || {};
-        var models = filterTable(__alloyId6);
+        var models = filterPending(__alloyId6);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
@@ -18,7 +18,7 @@ function Controller() {
     }
     function __alloyId14() {
         __alloyId14.opts || {};
-        var models = filterTable(__alloyId13);
+        var models = filterCheckedIn(__alloyId13);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
@@ -33,8 +33,15 @@ function Controller() {
         }
         $.__views.checkedin_table.setData(rows);
     }
-    function filterTable(collection) {
-        return collection.models;
+    function filterPending(collection) {
+        return collection.where({
+            checked: 0
+        });
+    }
+    function filterCheckedIn(collection) {
+        return collection.where({
+            checked: 1
+        });
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -98,7 +105,17 @@ function Controller() {
         name: "Patri Medina",
         email: "patri@gmail.com",
         phone: "3334445555",
-        checked: 100
+        checked: 0
+    }, {
+        name: "Eli Dominguez",
+        email: "eli@gmail.com",
+        phone: "2223334444",
+        checked: 0
+    }, {
+        name: "Miguel Ortiz",
+        email: "miguel@gmail.com",
+        phone: "5556667777",
+        checked: 1
     } ];
     _.each(sample_guests, function(guest) {
         guests.create({
