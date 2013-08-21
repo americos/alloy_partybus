@@ -1,5 +1,6 @@
 <Alloy>
 	<TableViewRow id="row">
+		<ImageView id="add" onClick="addGuest"></ImageView>
 		<Label id="guest_name" text="{name}"></Label>
 		<ImageView id="remove" onClick="removeGuest"></ImageView>
 	</TableViewRow>

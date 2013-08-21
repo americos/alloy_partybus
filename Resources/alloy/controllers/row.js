@@ -5,6 +5,13 @@ function Controller() {
         var guest = guests.get(id);
         guest.destroy();
     }
+    function addGuest(e) {
+        e.cancelBubble = true;
+        var id = $model.id;
+        var guest = guests.get(id);
+        guest.set("checked", 1);
+        guest.save();
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "row";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -18,6 +25,15 @@ function Controller() {
         id: "row"
     });
     $.__views.row && $.addTopLevelView($.__views.row);
+    $.__views.add = Ti.UI.createImageView({
+        image: "/add_icon.png",
+        left: 0,
+        width: "40dp",
+        height: "40dp",
+        id: "add"
+    });
+    $.__views.row.add($.__views.add);
+    addGuest ? $.__views.add.addEventListener("click", addGuest) : __defers["$.__views.add!click!addGuest"] = true;
     $.__views.guest_name = Ti.UI.createLabel({
         id: "guest_name",
         text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
@@ -35,6 +51,7 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
+    __defers["$.__views.add!click!addGuest"] && $.__views.add.addEventListener("click", addGuest);
     __defers["$.__views.remove!click!removeGuest"] && $.__views.remove.addEventListener("click", removeGuest);
     _.extend($, exports);
 }
