@@ -1,0 +1,21 @@
+"#total_label": {
+	top: "10dp"
+}
+
+"#pending_label":{
+	color : "#FF0000",
+	top: '110dp'
+}
+
+"#checked_label":{
+	color: "#00FF00",
+	top: '190dp'
+}
+
+".number":{
+	top: "40dp",
+	font: {
+		fontSize: 50,
+		fontFamily: 'Helvetica Neue'
+	},
+}

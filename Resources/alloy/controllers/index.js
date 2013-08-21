@@ -89,6 +89,23 @@ function Controller() {
         id: "__alloyId8"
     });
     $.__views.index.addTab($.__views.__alloyId8);
+    $.__views.__alloyId16 = Ti.UI.createWindow({
+        backgroundColor: "#fff",
+        title: "Stats",
+        id: "__alloyId16"
+    });
+    $.__views.__alloyId17 = Alloy.createController("stats", {
+        id: "__alloyId17",
+        __parentSymbol: $.__views.__alloyId16
+    });
+    $.__views.__alloyId17.setParent($.__views.__alloyId16);
+    $.__views.__alloyId15 = Ti.UI.createTab({
+        window: $.__views.__alloyId16,
+        title: "Stats",
+        icon: "KS_nav_ui.png",
+        id: "__alloyId15"
+    });
+    $.__views.index.addTab($.__views.__alloyId15);
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {
         __alloyId6.off("fetch destroy change add remove reset", __alloyId7);
@@ -156,6 +173,7 @@ function Controller() {
         });
     });
     guests.fetch();
+    Alloy.Globals.total_guests = guests.length;
     $.index.open();
     _.extend($, exports);
 }

@@ -14,5 +14,10 @@
 				</TableView>
 			</Window>
 		</Tab>
+		<Tab title="Stats" icon="KS_nav_ui.png">
+			<Window title="Stats">
+				<Require src="stats"></Require>
+			</Window>
+		</Tab>
 	</TabGroup>
 </Alloy>

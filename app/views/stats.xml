@@ -1,0 +1,8 @@
+<Alloy>
+	<View class="container">
+		<Label id="total_label" text="Total number of Guests:"></Label>
+		<Label id="total_label_number" class="number" text="1"></Label>
+		<Label id="pending_label" text="Pending Guests:"></Label>
+		<Label id="checked_label" text="Checked In Guests:"></Label>
+	</View>
+</Alloy>

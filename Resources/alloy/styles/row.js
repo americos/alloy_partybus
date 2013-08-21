@@ -1,1 +1,0 @@
-module.exports = [{"isId":true,"priority":100000.0005,"key":"row","style":{height:"40dp",}},{"isId":true,"priority":100000.0006,"key":"remove","style":{image:"/remove_icon.png",right:0,width:"40dp",height:"40dp",}},{"isId":true,"priority":100000.0007,"key":"add","style":{image:"/add_icon.png",left:0,width:"40dp",height:"40dp",}}];

@@ -25,6 +25,10 @@ _.each( sample_guests, function(guest){
 
 guests.fetch();
 
+
+Alloy.Globals.total_guests = guests.length;
+
+
 function filterPending( collection ){
 	return collection.where({ checked: 0}); 
 }
