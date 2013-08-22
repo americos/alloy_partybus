@@ -1,0 +1,6 @@
+<Alloy>
+  	<Window id="addWin" title="Guest Details" modal="true">
+		<Label text="Here will be the details"></Label>
+		<Button class="button" onClick="closeDetails">Cancel</Button>
+  	</Window>
+</Alloy>

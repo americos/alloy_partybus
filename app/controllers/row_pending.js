@@ -10,3 +10,9 @@ function addGuest(e){
 	
 	guest.save();
 }
+
+//Show details section
+function showDetails(){
+	console.log("=Showing Details");
+	Alloy.createController('details').getView().open();
+}

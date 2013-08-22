@@ -6,6 +6,10 @@ function Controller() {
         guest.set("checked", 1);
         guest.save();
     }
+    function showDetails() {
+        console.log("=Showing Details");
+        Alloy.createController("details").getView().open();
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "row_pending";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -33,10 +37,20 @@ function Controller() {
         text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
     });
     $.__views.row.add($.__views.guest_name);
+    $.__views.details_icon = Ti.UI.createImageView({
+        image: "/info.png",
+        right: 0,
+        width: "40dp",
+        height: "40dp",
+        id: "details_icon"
+    });
+    $.__views.row.add($.__views.details_icon);
+    showDetails ? $.__views.details_icon.addEventListener("click", showDetails) : __defers["$.__views.details_icon!click!showDetails"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
     __defers["$.__views.add!click!addGuest"] && $.__views.add.addEventListener("click", addGuest);
+    __defers["$.__views.details_icon!click!showDetails"] && $.__views.details_icon.addEventListener("click", showDetails);
     _.extend($, exports);
 }
 

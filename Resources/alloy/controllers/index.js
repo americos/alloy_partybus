@@ -1,33 +1,33 @@
 function Controller() {
-    function __alloyId7() {
-        __alloyId7.opts || {};
-        var models = filterPending(__alloyId6);
+    function __alloyId9() {
+        __alloyId9.opts || {};
+        var models = filterPending(__alloyId8);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId4 = models[i];
-            __alloyId4.__transform = {};
-            var __alloyId5 = Alloy.createController("row_pending", {
-                $model: __alloyId4
+            var __alloyId6 = models[i];
+            __alloyId6.__transform = {};
+            var __alloyId7 = Alloy.createController("row_pending", {
+                $model: __alloyId6
             });
-            rows.push(__alloyId5.getViewEx({
+            rows.push(__alloyId7.getViewEx({
                 recurse: true
             }));
         }
         $.__views.pending_table.setData(rows);
     }
-    function __alloyId14() {
-        __alloyId14.opts || {};
-        var models = filterCheckedIn(__alloyId13);
+    function __alloyId16() {
+        __alloyId16.opts || {};
+        var models = filterCheckedIn(__alloyId15);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId11 = models[i];
-            __alloyId11.__transform = {};
-            var __alloyId12 = Alloy.createController("row_checked", {
-                $model: __alloyId11
+            var __alloyId13 = models[i];
+            __alloyId13.__transform = {};
+            var __alloyId14 = Alloy.createController("row_checked", {
+                $model: __alloyId13
             });
-            rows.push(__alloyId12.getViewEx({
+            rows.push(__alloyId14.getViewEx({
                 recurse: true
             }));
         }
@@ -53,63 +53,63 @@ function Controller() {
     $.__views.index = Ti.UI.createTabGroup({
         id: "index"
     });
-    $.__views.__alloyId2 = Ti.UI.createWindow({
+    $.__views.__alloyId4 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Pending Guests",
-        id: "__alloyId2"
+        id: "__alloyId4"
     });
     $.__views.pending_table = Ti.UI.createTableView({
         id: "pending_table"
     });
-    $.__views.__alloyId2.add($.__views.pending_table);
-    var __alloyId6 = Alloy.Collections["guest"] || guest;
-    __alloyId6.on("fetch destroy change add remove reset", __alloyId7);
-    $.__views.__alloyId1 = Ti.UI.createTab({
-        window: $.__views.__alloyId2,
+    $.__views.__alloyId4.add($.__views.pending_table);
+    var __alloyId8 = Alloy.Collections["guest"] || guest;
+    __alloyId8.on("fetch destroy change add remove reset", __alloyId9);
+    $.__views.__alloyId3 = Ti.UI.createTab({
+        window: $.__views.__alloyId4,
         title: "Pending",
         icon: "KS_nav_ui.png",
-        id: "__alloyId1"
+        id: "__alloyId3"
     });
-    $.__views.index.addTab($.__views.__alloyId1);
-    $.__views.__alloyId9 = Ti.UI.createWindow({
+    $.__views.index.addTab($.__views.__alloyId3);
+    $.__views.__alloyId11 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Checkin Guests",
-        id: "__alloyId9"
+        id: "__alloyId11"
     });
     $.__views.checkedin_table = Ti.UI.createTableView({
         id: "checkedin_table"
     });
-    $.__views.__alloyId9.add($.__views.checkedin_table);
-    var __alloyId13 = Alloy.Collections["guest"] || guest;
-    __alloyId13.on("fetch destroy change add remove reset", __alloyId14);
-    $.__views.__alloyId8 = Ti.UI.createTab({
-        window: $.__views.__alloyId9,
+    $.__views.__alloyId11.add($.__views.checkedin_table);
+    var __alloyId15 = Alloy.Collections["guest"] || guest;
+    __alloyId15.on("fetch destroy change add remove reset", __alloyId16);
+    $.__views.__alloyId10 = Ti.UI.createTab({
+        window: $.__views.__alloyId11,
         title: "Checked-in",
         icon: "KS_nav_views.png",
-        id: "__alloyId8"
+        id: "__alloyId10"
     });
-    $.__views.index.addTab($.__views.__alloyId8);
-    $.__views.__alloyId16 = Ti.UI.createWindow({
+    $.__views.index.addTab($.__views.__alloyId10);
+    $.__views.__alloyId18 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Stats",
-        id: "__alloyId16"
+        id: "__alloyId18"
     });
-    $.__views.__alloyId17 = Alloy.createController("stats", {
-        id: "__alloyId17",
-        __parentSymbol: $.__views.__alloyId16
+    $.__views.__alloyId19 = Alloy.createController("stats", {
+        id: "__alloyId19",
+        __parentSymbol: $.__views.__alloyId18
     });
-    $.__views.__alloyId17.setParent($.__views.__alloyId16);
-    $.__views.__alloyId15 = Ti.UI.createTab({
-        window: $.__views.__alloyId16,
+    $.__views.__alloyId19.setParent($.__views.__alloyId18);
+    $.__views.__alloyId17 = Ti.UI.createTab({
+        window: $.__views.__alloyId18,
         title: "Stats",
         icon: "KS_nav_ui.png",
-        id: "__alloyId15"
+        id: "__alloyId17"
     });
-    $.__views.index.addTab($.__views.__alloyId15);
+    $.__views.index.addTab($.__views.__alloyId17);
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {
-        __alloyId6.off("fetch destroy change add remove reset", __alloyId7);
-        __alloyId13.off("fetch destroy change add remove reset", __alloyId14);
+        __alloyId8.off("fetch destroy change add remove reset", __alloyId9);
+        __alloyId15.off("fetch destroy change add remove reset", __alloyId16);
     };
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
@@ -174,12 +174,7 @@ function Controller() {
     });
     guests.fetch();
     Alloy.Globals.total_guests = guests.length;
-    var key = "d46b5a966acf0239";
-    var state = "VA";
-    var city_camel_case = "falls_church";
-    var url = "http://api.wunderground.com/api/" + key + "/geolookup/conditions/q/" + state + "/" + city_camel_case + ".json";
-    console.log(" ==--- URL:" + url);
-    var client = Titanium.Network.createHTTPClient({
+    Titanium.Network.createHTTPClient({
         onload: function() {
             console.log(" ***** Inside the callback:", this.responseText);
         },
@@ -188,9 +183,6 @@ function Controller() {
         },
         timeout: 5e3
     });
-    client.open("GET", url);
-    client.send();
-    console.log("=--- Just called the weather api");
     $.index.open();
     _.extend($, exports);
 }

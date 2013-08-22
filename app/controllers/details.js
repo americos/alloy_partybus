@@ -1,0 +1,3 @@
+function closeDetails(){
+	$.addWin.close();
+}

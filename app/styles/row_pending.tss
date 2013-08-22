@@ -9,3 +9,11 @@
 	width : '40dp',
 	height : '40dp',
 }
+
+
+"#details_icon":{
+	image :"/info.png",
+	right: 0,
+	width : '40dp',
+	height : '40dp'
+}

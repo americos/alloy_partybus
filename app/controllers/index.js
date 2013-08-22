@@ -33,8 +33,8 @@ var key = "d46b5a966acf0239";
 var state = "VA";
 var city_camel_case = "falls_church";
     
-var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/"+state+"/"+city_camel_case+".json";
-console.log(" ==--- URL:" + url);
+//var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/"+state+"/"+city_camel_case+".json";
+//console.log(" ==--- URL:" + url);
 var client = Titanium.Network.createHTTPClient({
 	//Data ready
 	onload: function(e){
