@@ -174,6 +174,23 @@ function Controller() {
     });
     guests.fetch();
     Alloy.Globals.total_guests = guests.length;
+    var key = "d46b5a966acf0239";
+    var state = "VA";
+    var city_camel_case = "falls_church";
+    var url = "http://api.wunderground.com/api/" + key + "/geolookup/conditions/q/" + state + "/" + city_camel_case + ".json";
+    console.log(" ==--- URL:" + url);
+    var client = Titanium.Network.createHTTPClient({
+        onload: function() {
+            console.log(" ***** Inside the callback:", this.responseText);
+        },
+        onerror: function(e) {
+            Ti.API.debug(e.error);
+        },
+        timeout: 5e3
+    });
+    client.open("GET", url);
+    client.send();
+    console.log("=--- Just called the weather api");
     $.index.open();
     _.extend($, exports);
 }
