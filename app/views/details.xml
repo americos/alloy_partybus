@@ -15,6 +15,12 @@
 		<Label class="modal_content" text="City"></Label>
 		<Label class="modal_title" id="guest_city" text="More data"></Label>
 		
+		<Button class="button" onClick="loadWeather">Let's get the Weather</Button>
+		
+		<Label class="weather_content" id="weather_temperature" text=""></Label>
+		<Label class="weather_content" id="weather_humidity" text=""></Label>
+		<Label class="weather_content" id="weather_time" text=""></Label>
+		
 		<Button class="button" onClick="closeDetails">Cancel</Button>
 		
   	</Window>

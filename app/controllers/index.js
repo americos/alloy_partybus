@@ -29,30 +29,6 @@ _.each( sample_guests, function(guest){
 
 Alloy.Globals.total_guests = guests.length;
 
-//////////Loading the Weather API
-var key = "d46b5a966acf0239";
-var state = "VA";
-var city_camel_case = "falls_church";
-    
-//var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/"+state+"/"+city_camel_case+".json";
-//console.log(" ==--- URL:" + url);
-var client = Titanium.Network.createHTTPClient({
-	//Data ready
-	onload: function(e){
-		// Ti.API.info("Received text: " + this['current_observation']['temp_f']);
-		console.log(" ***** Inside the callback:", this.responseText);
-	},
-	onerror: function(e){
-		Titanium.API.debug(e.error);
-	},
-	timeout : 5000
-});
-
-//// UNCOMMENT THIS LINES TO DO REQUEST TO API
-//client.open("GET", url);
-//client.send();
-
-//
 
 function filterPending( collection ){
 	return collection.where({ checked: 0}); 

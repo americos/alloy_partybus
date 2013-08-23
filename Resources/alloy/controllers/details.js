@@ -8,8 +8,32 @@ function Controller() {
         $.guest_phone.text = guest.get("phone");
         $.guest_state.text = guest.get("state");
         $.guest_city.text = guest.get("city");
-        console.log("---- guest state:", guest.get("state"));
-        console.log("---- guest city:", guest.get("city"));
+        Alloy.Globals.current_model = guest;
+    }
+    function loadWeather() {
+        Alloy.Globals.current_model;
+        getDataFromWeatherAPI();
+    }
+    function getDataFromWeatherAPI() {
+        var key = "d46b5a966acf0239";
+        var state = "VA";
+        var city_camel_case = "falls_church";
+        var url = "http://api.wunderground.com/api/" + key + "/geolookup/conditions/q/" + state + "/" + city_camel_case + ".json";
+        console.log(" == Calling Weather WunderGround API with the following URL: " + url);
+        var client = Titanium.Network.createHTTPClient({
+            onload: function() {
+                var response = JSON.parse(this.responseText);
+                $.weather_temperature.text = "Temperature: " + response["current_observation"]["temp_f"];
+                $.weather_time.text = "" + response["current_observation"]["observation_time"];
+                $.weather_humidity.text = "Humidity: " + response["current_observation"]["relative_humidity"];
+            },
+            onerror: function(e) {
+                Titanium.API.debug(e.error);
+            },
+            timeout: 5e3
+        });
+        client.open("GET", url);
+        client.send();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "details";
@@ -87,18 +111,43 @@ function Controller() {
     });
     $.__views.addWin.add($.__views.guest_city);
     $.__views.__alloyId5 = Ti.UI.createButton({
-        title: "Cancel",
+        title: "Let's get the Weather",
         id: "__alloyId5"
     });
     $.__views.addWin.add($.__views.__alloyId5);
-    closeDetails ? $.__views.__alloyId5.addEventListener("click", closeDetails) : __defers["$.__views.__alloyId5!click!closeDetails"] = true;
+    loadWeather ? $.__views.__alloyId5.addEventListener("click", loadWeather) : __defers["$.__views.__alloyId5!click!loadWeather"] = true;
+    $.__views.weather_temperature = Ti.UI.createLabel({
+        color: "#BABABA",
+        id: "weather_temperature",
+        text: ""
+    });
+    $.__views.addWin.add($.__views.weather_temperature);
+    $.__views.weather_humidity = Ti.UI.createLabel({
+        color: "#BABABA",
+        id: "weather_humidity",
+        text: ""
+    });
+    $.__views.addWin.add($.__views.weather_humidity);
+    $.__views.weather_time = Ti.UI.createLabel({
+        color: "#BABABA",
+        id: "weather_time",
+        text: ""
+    });
+    $.__views.addWin.add($.__views.weather_time);
+    $.__views.__alloyId6 = Ti.UI.createButton({
+        title: "Cancel",
+        id: "__alloyId6"
+    });
+    $.__views.addWin.add($.__views.__alloyId6);
+    closeDetails ? $.__views.__alloyId6.addEventListener("click", closeDetails) : __defers["$.__views.__alloyId6!click!closeDetails"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     exports.openDetails = function(guest) {
         $.addWin.open();
         loadGuestDetails(guest);
     };
-    __defers["$.__views.__alloyId5!click!closeDetails"] && $.__views.__alloyId5.addEventListener("click", closeDetails);
+    __defers["$.__views.__alloyId5!click!loadWeather"] && $.__views.__alloyId5.addEventListener("click", loadWeather);
+    __defers["$.__views.__alloyId6!click!closeDetails"] && $.__views.__alloyId6.addEventListener("click", closeDetails);
     _.extend($, exports);
 }
 

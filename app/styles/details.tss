@@ -9,3 +9,7 @@
 ".modal_content":{
 	color: "#00FF44"
 }
+
+".weather_content":{
+	color: "#BABABA"
+}
