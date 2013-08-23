@@ -1,1 +1,1 @@
-module.exports = [{"isId":true,"priority":100000.0002,"key":"addWin","style":{layout:"vertical",}}];
+module.exports = [{"isClass":true,"priority":10000.0003,"key":"modal_title","style":{color:"#FFFFFF",}},{"isClass":true,"priority":10000.0004,"key":"modal_content","style":{color:"#00FF44",}},{"isId":true,"priority":100000.0002,"key":"addWin","style":{layout:"vertical",}}];

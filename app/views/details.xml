@@ -1,6 +1,15 @@
 <Alloy>
   	<Window id="addWin" title="Guest Details" modal="true">
-		<Label text="Here will be the details"></Label>
+		<Label class="modal_content" text="Name"></Label>
+		<Label class="modal_title" id="guest_name" text="More data"></Label>
+		
+		<Label class="modal_content" text="Email"></Label>
+		<Label class="modal_title" id="guest_email" text="More data"></Label>
+		
+		<Label class="modal_content" text="Phone"></Label>
+		<Label class="modal_title" id="guest_phone" text="More data"></Label>
+		
 		<Button class="button" onClick="closeDetails">Cancel</Button>
+		
   	</Window>
 </Alloy>

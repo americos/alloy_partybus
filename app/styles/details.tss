@@ -1,3 +1,11 @@
 "#addWin":{
 	layout: 'vertical'
 }
+
+".modal_title":{
+	color: "#FFFFFF"
+}
+
+".modal_content":{
+	color: "#00FF44"
+}

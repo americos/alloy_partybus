@@ -1,33 +1,33 @@
 function Controller() {
-    function __alloyId9() {
-        __alloyId9.opts || {};
-        var models = filterPending(__alloyId8);
+    function __alloyId11() {
+        __alloyId11.opts || {};
+        var models = filterPending(__alloyId10);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId6 = models[i];
-            __alloyId6.__transform = {};
-            var __alloyId7 = Alloy.createController("row_pending", {
-                $model: __alloyId6
+            var __alloyId8 = models[i];
+            __alloyId8.__transform = {};
+            var __alloyId9 = Alloy.createController("row_pending", {
+                $model: __alloyId8
             });
-            rows.push(__alloyId7.getViewEx({
+            rows.push(__alloyId9.getViewEx({
                 recurse: true
             }));
         }
         $.__views.pending_table.setData(rows);
     }
-    function __alloyId16() {
-        __alloyId16.opts || {};
-        var models = filterCheckedIn(__alloyId15);
+    function __alloyId18() {
+        __alloyId18.opts || {};
+        var models = filterCheckedIn(__alloyId17);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId13 = models[i];
-            __alloyId13.__transform = {};
-            var __alloyId14 = Alloy.createController("row_checked", {
-                $model: __alloyId13
+            var __alloyId15 = models[i];
+            __alloyId15.__transform = {};
+            var __alloyId16 = Alloy.createController("row_checked", {
+                $model: __alloyId15
             });
-            rows.push(__alloyId14.getViewEx({
+            rows.push(__alloyId16.getViewEx({
                 recurse: true
             }));
         }
@@ -53,63 +53,63 @@ function Controller() {
     $.__views.index = Ti.UI.createTabGroup({
         id: "index"
     });
-    $.__views.__alloyId4 = Ti.UI.createWindow({
+    $.__views.__alloyId6 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Pending Guests",
-        id: "__alloyId4"
+        id: "__alloyId6"
     });
     $.__views.pending_table = Ti.UI.createTableView({
         id: "pending_table"
     });
-    $.__views.__alloyId4.add($.__views.pending_table);
-    var __alloyId8 = Alloy.Collections["guest"] || guest;
-    __alloyId8.on("fetch destroy change add remove reset", __alloyId9);
-    $.__views.__alloyId3 = Ti.UI.createTab({
-        window: $.__views.__alloyId4,
+    $.__views.__alloyId6.add($.__views.pending_table);
+    var __alloyId10 = Alloy.Collections["guest"] || guest;
+    __alloyId10.on("fetch destroy change add remove reset", __alloyId11);
+    $.__views.__alloyId5 = Ti.UI.createTab({
+        window: $.__views.__alloyId6,
         title: "Pending",
         icon: "KS_nav_ui.png",
-        id: "__alloyId3"
+        id: "__alloyId5"
     });
-    $.__views.index.addTab($.__views.__alloyId3);
-    $.__views.__alloyId11 = Ti.UI.createWindow({
+    $.__views.index.addTab($.__views.__alloyId5);
+    $.__views.__alloyId13 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Checkin Guests",
-        id: "__alloyId11"
+        id: "__alloyId13"
     });
     $.__views.checkedin_table = Ti.UI.createTableView({
         id: "checkedin_table"
     });
-    $.__views.__alloyId11.add($.__views.checkedin_table);
-    var __alloyId15 = Alloy.Collections["guest"] || guest;
-    __alloyId15.on("fetch destroy change add remove reset", __alloyId16);
-    $.__views.__alloyId10 = Ti.UI.createTab({
-        window: $.__views.__alloyId11,
+    $.__views.__alloyId13.add($.__views.checkedin_table);
+    var __alloyId17 = Alloy.Collections["guest"] || guest;
+    __alloyId17.on("fetch destroy change add remove reset", __alloyId18);
+    $.__views.__alloyId12 = Ti.UI.createTab({
+        window: $.__views.__alloyId13,
         title: "Checked-in",
         icon: "KS_nav_views.png",
-        id: "__alloyId10"
+        id: "__alloyId12"
     });
-    $.__views.index.addTab($.__views.__alloyId10);
-    $.__views.__alloyId18 = Ti.UI.createWindow({
+    $.__views.index.addTab($.__views.__alloyId12);
+    $.__views.__alloyId20 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Stats",
-        id: "__alloyId18"
+        id: "__alloyId20"
     });
-    $.__views.__alloyId19 = Alloy.createController("stats", {
-        id: "__alloyId19",
-        __parentSymbol: $.__views.__alloyId18
+    $.__views.__alloyId21 = Alloy.createController("stats", {
+        id: "__alloyId21",
+        __parentSymbol: $.__views.__alloyId20
     });
-    $.__views.__alloyId19.setParent($.__views.__alloyId18);
-    $.__views.__alloyId17 = Ti.UI.createTab({
-        window: $.__views.__alloyId18,
+    $.__views.__alloyId21.setParent($.__views.__alloyId20);
+    $.__views.__alloyId19 = Ti.UI.createTab({
+        window: $.__views.__alloyId20,
         title: "Stats",
         icon: "KS_nav_ui.png",
-        id: "__alloyId17"
+        id: "__alloyId19"
     });
-    $.__views.index.addTab($.__views.__alloyId17);
+    $.__views.index.addTab($.__views.__alloyId19);
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {
-        __alloyId8.off("fetch destroy change add remove reset", __alloyId9);
-        __alloyId15.off("fetch destroy change add remove reset", __alloyId16);
+        __alloyId10.off("fetch destroy change add remove reset", __alloyId11);
+        __alloyId17.off("fetch destroy change add remove reset", __alloyId18);
     };
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
@@ -179,7 +179,7 @@ function Controller() {
             console.log(" ***** Inside the callback:", this.responseText);
         },
         onerror: function(e) {
-            Ti.API.debug(e.error);
+            Titanium.API.debug(e.error);
         },
         timeout: 5e3
     });

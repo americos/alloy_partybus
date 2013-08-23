@@ -12,7 +12,11 @@ function addGuest(e){
 }
 
 //Show details section
-function showDetails(){
-	console.log("=Showing Details");
-	Alloy.createController('details').getView().open();
+function showDetailsModal(e){
+	e.cancelBubble = true; 
+	
+	var id = $model.id;
+	var guest= guests.get(id);
+	
+	Alloy.createController('details').openDetails(guest);
 }

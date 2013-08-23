@@ -6,9 +6,11 @@ function Controller() {
         guest.set("checked", 1);
         guest.save();
     }
-    function showDetails() {
-        console.log("=Showing Details");
-        Alloy.createController("details").getView().open();
+    function showDetailsModal(e) {
+        e.cancelBubble = true;
+        var id = $model.id;
+        var guest = guests.get(id);
+        Alloy.createController("details").openDetails(guest);
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "row_pending";
@@ -45,12 +47,12 @@ function Controller() {
         id: "details_icon"
     });
     $.__views.row.add($.__views.details_icon);
-    showDetails ? $.__views.details_icon.addEventListener("click", showDetails) : __defers["$.__views.details_icon!click!showDetails"] = true;
+    showDetailsModal ? $.__views.details_icon.addEventListener("click", showDetailsModal) : __defers["$.__views.details_icon!click!showDetailsModal"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
     __defers["$.__views.add!click!addGuest"] && $.__views.add.addEventListener("click", addGuest);
-    __defers["$.__views.details_icon!click!showDetails"] && $.__views.details_icon.addEventListener("click", showDetails);
+    __defers["$.__views.details_icon!click!showDetailsModal"] && $.__views.details_icon.addEventListener("click", showDetailsModal);
     _.extend($, exports);
 }
 

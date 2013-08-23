@@ -2,6 +2,6 @@
 	<TableViewRow id="row">
 		<ImageView id="add" onClick="addGuest"></ImageView>
 		<Label id="guest_name" text="{name}"></Label>
-		<ImageView id="details_icon" onClick="showDetails"></ImageView>
+		<ImageView id="details_icon" onClick="showDetailsModal"></ImageView>
 	</TableViewRow>
 </Alloy>

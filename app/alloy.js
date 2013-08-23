@@ -11,3 +11,9 @@
 // Alloy.Globals.someGlobalFunction = function(){};
 
 Alloy.Collections.guest = Alloy.createCollection("guest");
+
+
+Alloy.Globals.loadGuestDetails = function(guest){
+	console.log("============ Inside LoadDEtails");
+	$.guest_name.text = guest.get("name");
+};

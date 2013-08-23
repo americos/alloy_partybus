@@ -42,7 +42,7 @@ var client = Titanium.Network.createHTTPClient({
 		console.log(" ***** Inside the callback:", this.responseText);
 	},
 	onerror: function(e){
-		Ti.API.debug(e.error);
+		Titanium.API.debug(e.error);
 	},
 	timeout : 5000
 });
@@ -58,7 +58,7 @@ function filterPending( collection ){
 }
 
 function filterCheckedIn( collection ){
-	return collection.where({ checked: 1})	
+	return collection.where({ checked: 1});
 }
 
 
