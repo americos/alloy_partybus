@@ -6,6 +6,10 @@ function Controller() {
         $.guest_name.text = guest.get("name");
         $.guest_email.text = guest.get("email");
         $.guest_phone.text = guest.get("phone");
+        $.guest_state.text = guest.get("state");
+        $.guest_city.text = guest.get("city");
+        console.log("---- guest state:", guest.get("state"));
+        console.log("---- guest city:", guest.get("city"));
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "details";
@@ -58,20 +62,43 @@ function Controller() {
         text: "More data"
     });
     $.__views.addWin.add($.__views.guest_phone);
-    $.__views.__alloyId3 = Ti.UI.createButton({
-        title: "Cancel",
+    $.__views.__alloyId3 = Ti.UI.createLabel({
+        color: "#00FF44",
+        text: "State",
         id: "__alloyId3"
     });
     $.__views.addWin.add($.__views.__alloyId3);
-    closeDetails ? $.__views.__alloyId3.addEventListener("click", closeDetails) : __defers["$.__views.__alloyId3!click!closeDetails"] = true;
+    $.__views.guest_state = Ti.UI.createLabel({
+        color: "#FFFFFF",
+        id: "guest_state",
+        text: "More data"
+    });
+    $.__views.addWin.add($.__views.guest_state);
+    $.__views.__alloyId4 = Ti.UI.createLabel({
+        color: "#00FF44",
+        text: "City",
+        id: "__alloyId4"
+    });
+    $.__views.addWin.add($.__views.__alloyId4);
+    $.__views.guest_city = Ti.UI.createLabel({
+        color: "#FFFFFF",
+        id: "guest_city",
+        text: "More data"
+    });
+    $.__views.addWin.add($.__views.guest_city);
+    $.__views.__alloyId5 = Ti.UI.createButton({
+        title: "Cancel",
+        id: "__alloyId5"
+    });
+    $.__views.addWin.add($.__views.__alloyId5);
+    closeDetails ? $.__views.__alloyId5.addEventListener("click", closeDetails) : __defers["$.__views.__alloyId5!click!closeDetails"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    console.log("-- Inside details.js");
     exports.openDetails = function(guest) {
         $.addWin.open();
         loadGuestDetails(guest);
     };
-    __defers["$.__views.__alloyId3!click!closeDetails"] && $.__views.__alloyId3.addEventListener("click", closeDetails);
+    __defers["$.__views.__alloyId5!click!closeDetails"] && $.__views.__alloyId5.addEventListener("click", closeDetails);
     _.extend($, exports);
 }
 

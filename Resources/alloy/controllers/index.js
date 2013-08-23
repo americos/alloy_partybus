@@ -1,33 +1,33 @@
 function Controller() {
-    function __alloyId11() {
-        __alloyId11.opts || {};
-        var models = filterPending(__alloyId10);
+    function __alloyId13() {
+        __alloyId13.opts || {};
+        var models = filterPending(__alloyId12);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId8 = models[i];
-            __alloyId8.__transform = {};
-            var __alloyId9 = Alloy.createController("row_pending", {
-                $model: __alloyId8
+            var __alloyId10 = models[i];
+            __alloyId10.__transform = {};
+            var __alloyId11 = Alloy.createController("row_pending", {
+                $model: __alloyId10
             });
-            rows.push(__alloyId9.getViewEx({
+            rows.push(__alloyId11.getViewEx({
                 recurse: true
             }));
         }
         $.__views.pending_table.setData(rows);
     }
-    function __alloyId18() {
-        __alloyId18.opts || {};
-        var models = filterCheckedIn(__alloyId17);
+    function __alloyId20() {
+        __alloyId20.opts || {};
+        var models = filterCheckedIn(__alloyId19);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId15 = models[i];
-            __alloyId15.__transform = {};
-            var __alloyId16 = Alloy.createController("row_checked", {
-                $model: __alloyId15
+            var __alloyId17 = models[i];
+            __alloyId17.__transform = {};
+            var __alloyId18 = Alloy.createController("row_checked", {
+                $model: __alloyId17
             });
-            rows.push(__alloyId16.getViewEx({
+            rows.push(__alloyId18.getViewEx({
                 recurse: true
             }));
         }
@@ -53,63 +53,63 @@ function Controller() {
     $.__views.index = Ti.UI.createTabGroup({
         id: "index"
     });
-    $.__views.__alloyId6 = Ti.UI.createWindow({
+    $.__views.__alloyId8 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Pending Guests",
-        id: "__alloyId6"
+        id: "__alloyId8"
     });
     $.__views.pending_table = Ti.UI.createTableView({
         id: "pending_table"
     });
-    $.__views.__alloyId6.add($.__views.pending_table);
-    var __alloyId10 = Alloy.Collections["guest"] || guest;
-    __alloyId10.on("fetch destroy change add remove reset", __alloyId11);
-    $.__views.__alloyId5 = Ti.UI.createTab({
-        window: $.__views.__alloyId6,
+    $.__views.__alloyId8.add($.__views.pending_table);
+    var __alloyId12 = Alloy.Collections["guest"] || guest;
+    __alloyId12.on("fetch destroy change add remove reset", __alloyId13);
+    $.__views.__alloyId7 = Ti.UI.createTab({
+        window: $.__views.__alloyId8,
         title: "Pending",
         icon: "KS_nav_ui.png",
-        id: "__alloyId5"
+        id: "__alloyId7"
     });
-    $.__views.index.addTab($.__views.__alloyId5);
-    $.__views.__alloyId13 = Ti.UI.createWindow({
+    $.__views.index.addTab($.__views.__alloyId7);
+    $.__views.__alloyId15 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Checkin Guests",
-        id: "__alloyId13"
+        id: "__alloyId15"
     });
     $.__views.checkedin_table = Ti.UI.createTableView({
         id: "checkedin_table"
     });
-    $.__views.__alloyId13.add($.__views.checkedin_table);
-    var __alloyId17 = Alloy.Collections["guest"] || guest;
-    __alloyId17.on("fetch destroy change add remove reset", __alloyId18);
-    $.__views.__alloyId12 = Ti.UI.createTab({
-        window: $.__views.__alloyId13,
+    $.__views.__alloyId15.add($.__views.checkedin_table);
+    var __alloyId19 = Alloy.Collections["guest"] || guest;
+    __alloyId19.on("fetch destroy change add remove reset", __alloyId20);
+    $.__views.__alloyId14 = Ti.UI.createTab({
+        window: $.__views.__alloyId15,
         title: "Checked-in",
         icon: "KS_nav_views.png",
-        id: "__alloyId12"
+        id: "__alloyId14"
     });
-    $.__views.index.addTab($.__views.__alloyId12);
-    $.__views.__alloyId20 = Ti.UI.createWindow({
+    $.__views.index.addTab($.__views.__alloyId14);
+    $.__views.__alloyId22 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         title: "Stats",
-        id: "__alloyId20"
+        id: "__alloyId22"
     });
-    $.__views.__alloyId21 = Alloy.createController("stats", {
-        id: "__alloyId21",
-        __parentSymbol: $.__views.__alloyId20
+    $.__views.__alloyId23 = Alloy.createController("stats", {
+        id: "__alloyId23",
+        __parentSymbol: $.__views.__alloyId22
     });
-    $.__views.__alloyId21.setParent($.__views.__alloyId20);
-    $.__views.__alloyId19 = Ti.UI.createTab({
-        window: $.__views.__alloyId20,
+    $.__views.__alloyId23.setParent($.__views.__alloyId22);
+    $.__views.__alloyId21 = Ti.UI.createTab({
+        window: $.__views.__alloyId22,
         title: "Stats",
         icon: "KS_nav_ui.png",
-        id: "__alloyId19"
+        id: "__alloyId21"
     });
-    $.__views.index.addTab($.__views.__alloyId19);
+    $.__views.index.addTab($.__views.__alloyId21);
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {
-        __alloyId10.off("fetch destroy change add remove reset", __alloyId11);
-        __alloyId17.off("fetch destroy change add remove reset", __alloyId18);
+        __alloyId12.off("fetch destroy change add remove reset", __alloyId13);
+        __alloyId19.off("fetch destroy change add remove reset", __alloyId20);
     };
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
@@ -117,59 +117,81 @@ function Controller() {
         name: "Americo Savinon",
         email: "americos@gmail.com",
         phone: "2022861415",
-        checked: 1
+        checked: 1,
+        state: "VA",
+        city: "Arlington"
     }, {
         name: "Patri Medina",
         email: "patri@gmail.com",
         phone: "3334445555",
-        checked: 0
+        checked: 0,
+        state: "MD",
+        city: "Bethesda"
     }, {
         name: "Eli Dominguez",
         email: "eli@gmail.com",
         phone: "2223334444",
-        checked: 0
+        checked: 0,
+        state: "DC",
+        city: "Georgetown"
     }, {
         name: "Miguel Ortiz",
         email: "miguel@gmail.com",
         phone: "5556667777",
-        checked: 1
+        checked: 1,
+        state: "DC",
+        city: "du_pont"
     }, {
         name: "Kermit Farmer",
         email: "orci.lacus@loremtristique.co.uk",
         phone: "8062456286",
-        checked: 0
+        checked: 0,
+        state: "MD",
+        city: "chevy_chase"
     }, {
         name: "Blake Freeman",
         email: "dictum.Phasellus@est.co.uk",
         phone: "9842753387",
-        checked: 0
+        checked: 0,
+        state: "VA",
+        city: "vienna"
     }, {
         name: "Zeus Dillard",
         email: "tellus.imperdiet@Proin.ca",
         phone: "3029206332",
-        checked: 0
+        checked: 0,
+        state: "VA",
+        city: "falls_church"
     }, {
         name: "Kadeem Harrington",
         email: "hendrerit.neque@imperdiet.co.uk",
         phone: "5048326342",
-        checked: 0
+        checked: 0,
+        state: "VA",
+        city: "arlington"
     }, {
         name: "Elmo Mcfadden",
         email: "amet.consectetuer.adipiscing@habitantmorbitristique.com",
         phone: "8024466001",
-        checked: 0
+        checked: 0,
+        state: "MD",
+        city: "silver_spring"
     }, {
         name: "Jakeem Garza",
         email: "velit.Sed@eleifendCrassed.co.uk",
         phone: "7703155413",
-        checked: 0
+        checked: 0,
+        state: "DC",
+        city: "Georgetown"
     } ];
     _.each(sample_guests, function(guest) {
         guests.create({
             name: guest.name,
             email: guest.email,
             phone: guest.phone,
-            checked: guest.checked
+            checked: guest.checked,
+            state: guest.state,
+            city: guest.city
         });
     });
     guests.fetch();

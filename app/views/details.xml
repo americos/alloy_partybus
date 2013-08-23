@@ -9,6 +9,12 @@
 		<Label class="modal_content" text="Phone"></Label>
 		<Label class="modal_title" id="guest_phone" text="More data"></Label>
 		
+		<Label class="modal_content" text="State"></Label>
+		<Label class="modal_title" id="guest_state" text="More data"></Label>
+		
+		<Label class="modal_content" text="City"></Label>
+		<Label class="modal_title" id="guest_city" text="More data"></Label>
+		
 		<Button class="button" onClick="closeDetails">Cancel</Button>
 		
   	</Window>
