@@ -4,7 +4,7 @@ exports.definition = {
 		    "name": "TEXT",
 		    "email": "TEXT",
 		    "phone": "TEXT",
-		    "checked": "INT",
+		    "checked": "INTEGER",
 		    "state": "TEXT",
 		    "city": "TEXT"
 		},

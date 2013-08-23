@@ -117,7 +117,7 @@ function Controller() {
         name: "Americo Savinon",
         email: "americos@gmail.com",
         phone: "2022861415",
-        checked: 1,
+        checked: 0,
         state: "VA",
         city: "Arlington"
     }, {
@@ -138,7 +138,7 @@ function Controller() {
         name: "Miguel Ortiz",
         email: "miguel@gmail.com",
         phone: "5556667777",
-        checked: 1,
+        checked: 0,
         state: "DC",
         city: "du_pont"
     }, {
@@ -194,7 +194,9 @@ function Controller() {
             city: guest.city
         });
     });
-    guests.fetch();
+    var first = guests.at(0);
+    console.log("== checked: ", first.get("checked"));
+    console.log("== state: ", first.get("state"));
     Alloy.Globals.total_guests = guests.length;
     Titanium.Network.createHTTPClient({
         onload: function() {
