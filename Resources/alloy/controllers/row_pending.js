@@ -25,34 +25,27 @@ function Controller() {
         id: "row"
     });
     $.__views.row && $.addTopLevelView($.__views.row);
+    $.__views.guest_name = Ti.UI.createLabel({
+        left: 5,
+        id: "guest_name",
+        text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
+    });
+    $.__views.row.add($.__views.guest_name);
+    showDetailsModal ? $.__views.guest_name.addEventListener("click", showDetailsModal) : __defers["$.__views.guest_name!click!showDetailsModal"] = true;
     $.__views.add = Ti.UI.createImageView({
         image: "/add_icon.png",
-        left: 0,
+        right: 0,
         width: "40dp",
         height: "40dp",
         id: "add"
     });
     $.__views.row.add($.__views.add);
     addGuest ? $.__views.add.addEventListener("click", addGuest) : __defers["$.__views.add!click!addGuest"] = true;
-    $.__views.guest_name = Ti.UI.createLabel({
-        id: "guest_name",
-        text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
-    });
-    $.__views.row.add($.__views.guest_name);
-    $.__views.details_icon = Ti.UI.createImageView({
-        image: "/info.png",
-        right: 0,
-        width: "40dp",
-        height: "40dp",
-        id: "details_icon"
-    });
-    $.__views.row.add($.__views.details_icon);
-    showDetailsModal ? $.__views.details_icon.addEventListener("click", showDetailsModal) : __defers["$.__views.details_icon!click!showDetailsModal"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
+    __defers["$.__views.guest_name!click!showDetailsModal"] && $.__views.guest_name.addEventListener("click", showDetailsModal);
     __defers["$.__views.add!click!addGuest"] && $.__views.add.addEventListener("click", addGuest);
-    __defers["$.__views.details_icon!click!showDetailsModal"] && $.__views.details_icon.addEventListener("click", showDetailsModal);
     _.extend($, exports);
 }
 

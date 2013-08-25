@@ -19,6 +19,7 @@ function Controller() {
     });
     $.__views.row && $.addTopLevelView($.__views.row);
     $.__views.guest_name = Ti.UI.createLabel({
+        left: 5,
         id: "guest_name",
         text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
     });

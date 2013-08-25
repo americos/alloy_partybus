@@ -4,3 +4,7 @@
 	width: '40dp',
 	height: '40dp'
 } 
+
+"#guest_name":{
+	left: 5
+}
