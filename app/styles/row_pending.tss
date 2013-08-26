@@ -4,12 +4,19 @@
 
 
 "#guest_name":{
-	left: 5
+	left: 45
 }
 
 "#add":{
 	image: "/add_icon.png",
-	right : 0,
+	left : 0,
 	width : '40dp',
 	height : '40dp',
+}
+
+".details_icon":{
+	image :"/info.png",
+	right: 0,
+	width : '40dp',
+	height : '40dp'
 }

@@ -1,10 +1,17 @@
 "#remove": {
 	image: "/remove_icon.png",
-	right: 0,
+	left: 0,
 	width: '40dp',
 	height: '40dp'
 } 
 
 "#guest_name":{
-	left: 5
+	left: 45
+}
+
+".details_icon":{
+	image :"/info.png",
+	right: 0,
+	width : '40dp',
+	height : '40dp'
 }

@@ -1,1 +1,1 @@
-module.exports = [{"isId":true,"priority":100000.001,"key":"remove","style":{image:"/remove_icon.png",right:0,width:"40dp",height:"40dp",}},{"isId":true,"priority":100000.0011,"key":"guest_name","style":{left:5,}}];
+module.exports = [{"isClass":true,"priority":10000.0012,"key":"details_icon","style":{image:"/info.png",right:0,width:"40dp",height:"40dp",}},{"isId":true,"priority":100000.001,"key":"remove","style":{image:"/remove_icon.png",left:0,width:"40dp",height:"40dp",}},{"isId":true,"priority":100000.0011,"key":"guest_name","style":{left:45,}}];

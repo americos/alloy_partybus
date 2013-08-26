@@ -25,27 +25,35 @@ function Controller() {
         id: "row"
     });
     $.__views.row && $.addTopLevelView($.__views.row);
-    $.__views.guest_name = Ti.UI.createLabel({
-        left: 5,
-        id: "guest_name",
-        text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
-    });
-    $.__views.row.add($.__views.guest_name);
-    showDetailsModal ? $.__views.guest_name.addEventListener("click", showDetailsModal) : __defers["$.__views.guest_name!click!showDetailsModal"] = true;
     $.__views.add = Ti.UI.createImageView({
         image: "/add_icon.png",
-        right: 0,
+        left: 0,
         width: "40dp",
         height: "40dp",
         id: "add"
     });
     $.__views.row.add($.__views.add);
     addGuest ? $.__views.add.addEventListener("click", addGuest) : __defers["$.__views.add!click!addGuest"] = true;
+    $.__views.guest_name = Ti.UI.createLabel({
+        left: 45,
+        id: "guest_name",
+        text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
+    });
+    $.__views.row.add($.__views.guest_name);
+    $.__views.__alloyId26 = Ti.UI.createImageView({
+        image: "/info.png",
+        right: 0,
+        width: "40dp",
+        height: "40dp",
+        id: "__alloyId26"
+    });
+    $.__views.row.add($.__views.__alloyId26);
+    showDetailsModal ? $.__views.__alloyId26.addEventListener("click", showDetailsModal) : __defers["$.__views.__alloyId26!click!showDetailsModal"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
-    __defers["$.__views.guest_name!click!showDetailsModal"] && $.__views.guest_name.addEventListener("click", showDetailsModal);
     __defers["$.__views.add!click!addGuest"] && $.__views.add.addEventListener("click", addGuest);
+    __defers["$.__views.__alloyId26!click!showDetailsModal"] && $.__views.__alloyId26.addEventListener("click", showDetailsModal);
     _.extend($, exports);
 }
 

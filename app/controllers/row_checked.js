@@ -10,3 +10,14 @@ function removeGuest(e){
 	
 	guest.save();
 }
+
+
+//Show details section
+function showDetailsModal(e){
+	e.cancelBubble = true; 
+	
+	var id = $model.id;
+	var guest= guests.get(id);
+	
+	Alloy.createController('details').openDetails(guest);
+}

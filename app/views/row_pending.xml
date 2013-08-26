@@ -1,6 +1,7 @@
 <Alloy>
 	<TableViewRow id="row">
-		<Label id="guest_name" text="{name}" onClick="showDetailsModal"></Label>
 		<ImageView id="add" onClick="addGuest"></ImageView>
+		<Label id="guest_name" text="{name}"></Label>
+		<ImageView class="details_icon" onClick="showDetailsModal"></ImageView>
 	</TableViewRow>
 </Alloy>
