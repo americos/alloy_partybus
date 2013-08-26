@@ -13,7 +13,14 @@
 Alloy.Collections.guest = Alloy.createCollection("guest");
 
 
-Alloy.Globals.loadGuestDetails = function(guest){
-	console.log("============ Inside LoadDEtails");
-	$.guest_name.text = guest.get("name");
+Alloy.Globals.loadGuestDetails = function(instance, guest){
+	
+	instance.guest_name.text = guest.get("name");
+	instance.guest_email.text = guest.get("email");
+	instance.guest_phone.text = guest.get("phone");
+	instance.guest_state.text = guest.get("state");
+	instance.guest_city.text = guest.get("city");
+	
+	//Saving current model for later use (weather Third Party API call)
+	Alloy.Globals.current_model = guest;
 };

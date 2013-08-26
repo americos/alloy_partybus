@@ -1,7 +1,7 @@
 exports.openDetails = function(guest){
 	$.addWin.open();
 	
-	loadGuestDetails(guest);
+	Alloy.Globals.loadGuestDetails($, guest);
 };
 
 
@@ -10,18 +10,18 @@ function closeDetails(){
 }
 
 
-function loadGuestDetails(guest){
-	
-	$.guest_name.text = guest.get("name");
-	$.guest_email.text = guest.get("email");
-	$.guest_phone.text = guest.get("phone");
-	$.guest_state.text = guest.get("state");
-	$.guest_city.text = guest.get("city");
-	
-	//Saving current model for later use (weather call)
-	Alloy.Globals.current_model = guest;
-	
-}
+// function loadGuestDetails(guest){
+// 	
+	// $.guest_name.text = guest.get("name");
+	// $.guest_email.text = guest.get("email");
+	// $.guest_phone.text = guest.get("phone");
+	// $.guest_state.text = guest.get("state");
+	// $.guest_city.text = guest.get("city");
+// 	
+	// //Saving current model for later use (weather call)
+	// Alloy.Globals.current_model = guest;
+// 	
+// }
 
 
 function loadWeather(){

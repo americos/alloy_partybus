@@ -2,14 +2,6 @@ function Controller() {
     function closeDetails() {
         $.addWin.close();
     }
-    function loadGuestDetails(guest) {
-        $.guest_name.text = guest.get("name");
-        $.guest_email.text = guest.get("email");
-        $.guest_phone.text = guest.get("phone");
-        $.guest_state.text = guest.get("state");
-        $.guest_city.text = guest.get("city");
-        Alloy.Globals.current_model = guest;
-    }
     function loadWeather() {
         Alloy.Globals.current_model;
         getDataFromWeatherAPI();
@@ -144,7 +136,7 @@ function Controller() {
     _.extend($, $.__views);
     exports.openDetails = function(guest) {
         $.addWin.open();
-        loadGuestDetails(guest);
+        Alloy.Globals.loadGuestDetails($, guest);
     };
     __defers["$.__views.__alloyId5!click!loadWeather"] && $.__views.__alloyId5.addEventListener("click", loadWeather);
     __defers["$.__views.__alloyId6!click!closeDetails"] && $.__views.__alloyId6.addEventListener("click", closeDetails);
