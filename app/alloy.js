@@ -10,9 +10,10 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+//Creating Collection
 Alloy.Collections.guest = Alloy.createCollection("guest");
 
-
+//This function will be resued to show the Guest details
 Alloy.Globals.loadGuestDetails = function(instance, guest){
 	
 	instance.guest_name.text = guest.get("name");

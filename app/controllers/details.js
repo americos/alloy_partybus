@@ -1,3 +1,4 @@
+//Open Details modal Window
 exports.openDetails = function(guest){
 	$.addWin.open();
 	
@@ -15,20 +16,22 @@ function loadWeather(){
 	getDataFromWeatherAPI();
 }
 
+//Getting Weather info through Wunderground.com
 function getDataFromWeatherAPI(){
 
 	var guest = Alloy.Globals.current_model;
 
+	//My Developer Key (500 hits/day on free plan)
 	var key = "d46b5a966acf0239";
 	var state = guest.get("state");
 	var city_camel_case = guest.get("city");
-	    
+
 	var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/"+state+"/"+city_camel_case+".json";
 	console.log(" == Calling Weather WunderGround API with the following URL: " + url);
 	var client = Titanium.Network.createHTTPClient({
 		//Data ready
 		onload: function(e){
-			//console.log(" ***** Inside the callback:", this.responseText);
+
 			var response = JSON.parse(this.responseText);
 			
 			//Temperature "humanize" is on: response['current_observation']['temperature_string'];
@@ -46,7 +49,7 @@ function getDataFromWeatherAPI(){
 		timeout : 5000
 	});
 
-	//// UNCOMMENT THIS LINES TO DO REQUEST TO API
+	//// COMMENT THIS LINES TO AVOID DOING REQUEST TO API
 	client.open("GET", url);
 	client.send();
 
