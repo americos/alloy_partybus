@@ -7,16 +7,11 @@
 				</TableView>
 			</Window>
 		</Tab>
-		<Tab title="Checked-in" icon="KS_nav_views.png">
+		<Tab title="Checked in" icon="KS_nav_views.png">
 			<Window title="Checkin Guests">
 				<TableView id="checkedin_table" dataCollection="guest" dataFilter="filterCheckedIn">
 					<Require src="row_checked"/>
 				</TableView>
-			</Window>
-		</Tab>
-		<Tab title="Stats" icon="KS_nav_ui.png">
-			<Window title="Stats">
-				<Require src="stats"></Require>
 			</Window>
 		</Tab>
 	</TabGroup>

@@ -84,28 +84,11 @@ function Controller() {
     __alloyId20.on("fetch destroy change add remove reset", __alloyId21);
     $.__views.__alloyId15 = Ti.UI.createTab({
         window: $.__views.__alloyId16,
-        title: "Checked-in",
+        title: "Checked in",
         icon: "KS_nav_views.png",
         id: "__alloyId15"
     });
     $.__views.index.addTab($.__views.__alloyId15);
-    $.__views.__alloyId23 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Stats",
-        id: "__alloyId23"
-    });
-    $.__views.__alloyId24 = Alloy.createController("stats", {
-        id: "__alloyId24",
-        __parentSymbol: $.__views.__alloyId23
-    });
-    $.__views.__alloyId24.setParent($.__views.__alloyId23);
-    $.__views.__alloyId22 = Ti.UI.createTab({
-        window: $.__views.__alloyId23,
-        title: "Stats",
-        icon: "KS_nav_ui.png",
-        id: "__alloyId22"
-    });
-    $.__views.index.addTab($.__views.__alloyId22);
     $.__views.index && $.addTopLevelView($.__views.index);
     exports.destroy = function() {
         __alloyId13.off("fetch destroy change add remove reset", __alloyId14);
@@ -132,15 +115,15 @@ function Controller() {
         email: "eli@gmail.com",
         phone: "2223334444",
         checked: 0,
-        state: "DC",
-        city: "Georgetown"
+        state: "VA",
+        city: "Arlington"
     }, {
         name: "Miguel Ortiz",
         email: "miguel@gmail.com",
         phone: "5556667777",
         checked: 0,
-        state: "DC",
-        city: "du_pont"
+        state: "MD",
+        city: "rockville"
     }, {
         name: "Kermit Farmer",
         email: "orci.lacus@loremtristique.co.uk",
@@ -171,18 +154,18 @@ function Controller() {
         city: "arlington"
     }, {
         name: "Elmo Mcfadden",
-        email: "amet.consectetuer.adipiscing@habitantmorbitristique.com",
+        email: "amet@habitantmorbitristique.com",
         phone: "8024466001",
         checked: 0,
         state: "MD",
         city: "silver_spring"
     }, {
         name: "Jakeem Garza",
-        email: "velit.Sed@eleifendCrassed.co.uk",
+        email: "velit.Sed@eleifend.co.uk",
         phone: "7703155413",
         checked: 0,
-        state: "DC",
-        city: "Georgetown"
+        state: "VA",
+        city: "Springfield"
     } ];
     _.each(sample_guests, function(guest) {
         guests.create({

@@ -3,13 +3,13 @@ function Controller() {
         $.addWin.close();
     }
     function loadWeather() {
-        Alloy.Globals.current_model;
         getDataFromWeatherAPI();
     }
     function getDataFromWeatherAPI() {
+        var guest = Alloy.Globals.current_model;
         var key = "d46b5a966acf0239";
-        var state = "VA";
-        var city_camel_case = "falls_church";
+        var state = guest.get("state");
+        var city_camel_case = guest.get("city");
         var url = "http://api.wunderground.com/api/" + key + "/geolookup/conditions/q/" + state + "/" + city_camel_case + ".json";
         console.log(" == Calling Weather WunderGround API with the following URL: " + url);
         var client = Titanium.Network.createHTTPClient({
@@ -127,7 +127,7 @@ function Controller() {
     });
     $.__views.addWin.add($.__views.weather_time);
     $.__views.__alloyId6 = Ti.UI.createButton({
-        title: "Cancel",
+        title: "Close",
         id: "__alloyId6"
     });
     $.__views.addWin.add($.__views.__alloyId6);

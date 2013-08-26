@@ -10,31 +10,18 @@ function closeDetails(){
 }
 
 
-// function loadGuestDetails(guest){
-// 	
-	// $.guest_name.text = guest.get("name");
-	// $.guest_email.text = guest.get("email");
-	// $.guest_phone.text = guest.get("phone");
-	// $.guest_state.text = guest.get("state");
-	// $.guest_city.text = guest.get("city");
-// 	
-	// //Saving current model for later use (weather call)
-	// Alloy.Globals.current_model = guest;
-// 	
-// }
-
-
 function loadWeather(){
-	var guest = Alloy.Globals.current_model;
 	
 	getDataFromWeatherAPI();
 }
 
 function getDataFromWeatherAPI(){
 
+	var guest = Alloy.Globals.current_model;
+
 	var key = "d46b5a966acf0239";
-	var state = "VA";
-	var city_camel_case = "falls_church";
+	var state = guest.get("state");
+	var city_camel_case = guest.get("city");
 	    
 	var url = "http://api.wunderground.com/api/"+key+"/geolookup/conditions/q/"+state+"/"+city_camel_case+".json";
 	console.log(" == Calling Weather WunderGround API with the following URL: " + url);

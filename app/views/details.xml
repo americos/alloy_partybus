@@ -21,7 +21,7 @@
 		<Label class="weather_content" id="weather_humidity" text=""></Label>
 		<Label class="weather_content" id="weather_time" text=""></Label>
 		
-		<Button class="button" onClick="closeDetails">Cancel</Button>
+		<Button class="button" onClick="closeDetails">Close</Button>
 		
   	</Window>
 </Alloy>

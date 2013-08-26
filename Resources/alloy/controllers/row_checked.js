@@ -39,20 +39,20 @@ function Controller() {
         text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
     });
     $.__views.row.add($.__views.guest_name);
-    $.__views.__alloyId25 = Ti.UI.createImageView({
+    $.__views.__alloyId22 = Ti.UI.createImageView({
         image: "/info.png",
         right: 0,
         width: "30dp",
         height: "30dp",
-        id: "__alloyId25"
+        id: "__alloyId22"
     });
-    $.__views.row.add($.__views.__alloyId25);
-    showDetailsModal ? $.__views.__alloyId25.addEventListener("click", showDetailsModal) : __defers["$.__views.__alloyId25!click!showDetailsModal"] = true;
+    $.__views.row.add($.__views.__alloyId22);
+    showDetailsModal ? $.__views.__alloyId22.addEventListener("click", showDetailsModal) : __defers["$.__views.__alloyId22!click!showDetailsModal"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     var guests = Alloy.Collections.guest;
     __defers["$.__views.remove!click!removeGuest"] && $.__views.remove.addEventListener("click", removeGuest);
-    __defers["$.__views.__alloyId25!click!showDetailsModal"] && $.__views.__alloyId25.addEventListener("click", showDetailsModal);
+    __defers["$.__views.__alloyId22!click!showDetailsModal"] && $.__views.__alloyId22.addEventListener("click", showDetailsModal);
     _.extend($, exports);
 }
 
