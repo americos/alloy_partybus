@@ -10,13 +10,13 @@
 "#add":{
 	image: "/add_icon.png",
 	left : 0,
-	width : '40dp',
-	height : '40dp',
+	width : '30dp',
+	height : '30dp',
 }
 
 ".details_icon":{
 	image :"/info.png",
 	right: 0,
-	width : '40dp',
-	height : '40dp'
+	width : '30dp',
+	height : '30dp'
 }

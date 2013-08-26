@@ -28,8 +28,8 @@ function Controller() {
     $.__views.add = Ti.UI.createImageView({
         image: "/add_icon.png",
         left: 0,
-        width: "40dp",
-        height: "40dp",
+        width: "30dp",
+        height: "30dp",
         id: "add"
     });
     $.__views.row.add($.__views.add);
@@ -43,8 +43,8 @@ function Controller() {
     $.__views.__alloyId26 = Ti.UI.createImageView({
         image: "/info.png",
         right: 0,
-        width: "40dp",
-        height: "40dp",
+        width: "30dp",
+        height: "30dp",
         id: "__alloyId26"
     });
     $.__views.row.add($.__views.__alloyId26);

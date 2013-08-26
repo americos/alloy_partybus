@@ -27,8 +27,8 @@ function Controller() {
     $.__views.remove = Ti.UI.createImageView({
         image: "/remove_icon.png",
         left: 0,
-        width: "40dp",
-        height: "40dp",
+        width: "30dp",
+        height: "30dp",
         id: "remove"
     });
     $.__views.row.add($.__views.remove);
@@ -42,8 +42,8 @@ function Controller() {
     $.__views.__alloyId25 = Ti.UI.createImageView({
         image: "/info.png",
         right: 0,
-        width: "40dp",
-        height: "40dp",
+        width: "30dp",
+        height: "30dp",
         id: "__alloyId25"
     });
     $.__views.row.add($.__views.__alloyId25);
